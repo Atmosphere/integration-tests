@@ -1,0 +1,399 @@
+16:22:24.393 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.AtmosphereServletTest$Handler mapped to context-path: /test
+16:22:24.396 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.AtmosphereServletTest$Handler mapped to context-path: /test2
+16:22:24.462 INFO [main] o.m.log [Slf4jLog.java:67] Logging to Logger[org.mortbay.log] via org.mortbay.log.Slf4jLog
+16:22:24.481 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:24.586 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:24.586 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:24.666 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:24.667 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:24.668 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:24.668 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:24.668 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:24.669 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:24.672 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:24.673 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:24.674 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:24.675 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:24.678 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:24.678 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:24.679 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:24.685 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:24.685 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:24.686 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:24.686 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:24.686 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:24.687 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:24.689 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:24.690 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:24.691 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53659
+16:22:24.697 INFO [TestNGInvoker-testBroadcastFactoryNewBroadcasterTimeout()] o.a.t.h.BaseTest [BaseTest.java:1188] BlockingIOCometSupportTest: running test: testBroadcastFactoryTimeout
+16:22:24.736 INFO [TestNGInvoker-testBroadcastFactoryNewBroadcasterTimeout()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$27 mapped to context-path: /*
+16:22:24.944 DEBUG [1519543948@qtp-1047055737-0] o.a.c.BlockingIOCometSupport [BlockingIOCometSupport.java:106] response wasn't suspended: AtmosphereResponse{, uuid=072180fc-9ae7-46f9-9ad0-d56a918313e6, headers={Access-Control-Allow-Origin=*, Expires=-1, Access-Control-Allow-Credentials=true, X-Atmosphere-tracking-id=072180fc-9ae7-46f9-9ad0-d56a918313e6, Pragma=no-cache, Cache-Control=no-store, no-cache, must-revalidate}, asyncIOWriter=null, status=200, statusMessage='OK', atmosphereRequest=072180fc-9ae7-46f9-9ad0-d56a918313e6, writeStatusAndHeader=true, delegateToNativeResponse=true, destroyable=true, response=HTTP/1.1 200 
+X-Atmosphere-tracking-id: 072180fc-9ae7-46f9-9ad0-d56a918313e6
+Expires: -1
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+}
+16:22:24.969 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 1 
+16:22:24.970 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster ExternalBroadcaster factory size now 0 
+16:22:24.971 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:24.973 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:24.974 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:25.023 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:25.024 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:25.024 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:25.025 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:25.025 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:25.025 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:25.025 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:25.025 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:25.026 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:25.026 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:25.026 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:25.027 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:25.027 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:25.027 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:25.028 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:25.028 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:25.028 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:25.029 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:25.029 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:25.029 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:25.030 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:25.030 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53661
+16:22:25.031 INFO [TestNGInvoker-testDelayNextBroadcast()] o.a.t.h.BaseTest [BaseTest.java:557] BlockingIOCometSupportTest: running test: testDelayNextBroadcast
+16:22:25.032 INFO [TestNGInvoker-testDelayNextBroadcast()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$11 mapped to context-path: /*
+16:22:30.059 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:22:30.161 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:30.164 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:30.164 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:30.226 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:30.227 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:30.227 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:30.227 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:30.227 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:30.228 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:30.228 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:30.228 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:30.228 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:30.229 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:30.229 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:30.229 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:30.229 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:30.230 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:30.230 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:30.230 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:30.230 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:30.230 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:30.231 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:30.231 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:30.231 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:30.231 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53700
+16:22:30.232 INFO [TestNGInvoker-testScheduleBroadcast()] o.a.t.h.BaseTest [BaseTest.java:626] BlockingIOCometSupportTest: running test: testScheduleBroadcast
+16:22:30.233 INFO [TestNGInvoker-testScheduleBroadcast()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$12 mapped to context-path: /*
+16:22:30.252 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:22:30.354 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:30.356 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:30.356 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:30.391 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:30.392 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:30.392 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:30.392 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:30.393 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:30.393 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:30.393 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:30.393 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:30.394 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:30.394 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:30.394 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:30.394 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:30.395 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:30.395 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:30.395 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:30.395 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:30.395 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:30.396 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:30.396 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:30.396 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:30.396 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:30.397 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53703
+16:22:30.397 INFO [TestNGInvoker-testBroadcastFilter()] o.a.t.h.BaseTest [BaseTest.java:779] BlockingIOCometSupportTest: running test: testBroadcastFilter
+16:22:30.399 INFO [TestNGInvoker-testBroadcastFilter()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$16 mapped to context-path: /*
+16:22:30.411 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:22:30.413 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:30.416 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:30.416 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:30.476 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:30.476 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:30.477 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:30.477 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:30.477 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:30.477 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:30.478 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:30.478 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:30.478 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:30.478 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:30.478 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:30.479 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:30.479 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:30.479 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:30.479 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:30.480 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:30.480 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:30.480 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:30.480 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:30.480 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:30.481 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:30.481 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53706
+16:22:30.482 INFO [TestNGInvoker-testCookie()] o.a.t.h.BaseTest [BaseTest.java:1324] BlockingIOCometSupportTest: running test: testCookie
+16:22:30.483 INFO [TestNGInvoker-testCookie()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$30 mapped to context-path: /*
+16:22:30.501 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:22:30.603 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:30.605 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:30.606 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:30.642 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:30.643 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:30.643 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:30.643 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:30.644 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:30.644 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:30.644 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:30.645 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:30.645 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:30.645 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:30.646 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:30.646 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:30.646 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:30.647 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:30.647 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:30.647 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:30.648 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:30.648 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:30.649 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:30.649 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:30.649 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:30.650 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53709
+16:22:30.651 INFO [TestNGInvoker-testDelayBroadcast()] o.a.t.h.BaseTest [BaseTest.java:480] BlockingIOCometSupportTest: running test: testDelayBroadcast
+16:22:30.652 INFO [TestNGInvoker-testDelayBroadcast()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$9 mapped to context-path: /*
+16:22:35.680 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:22:35.782 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:35.785 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:35.785 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:35.819 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:35.819 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:35.819 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:35.820 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:35.820 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:35.820 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:35.820 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:35.821 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:35.821 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:35.821 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:35.821 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:35.822 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:35.822 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:35.822 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:35.822 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:35.822 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:35.823 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:35.823 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:35.823 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:35.823 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:35.823 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:35.824 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53713
+16:22:35.825 INFO [TestNGInvoker-testAggregateFilter()] o.a.t.h.BaseTest [BaseTest.java:856] BlockingIOCometSupportTest: running test: testAggregateFilter
+16:22:35.826 INFO [TestNGInvoker-testAggregateFilter()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$18 mapped to context-path: /*
+16:22:35.835 DEBUG [1087605110@qtp-317263395-2] o.a.c.DefaultBroadcaster [DefaultBroadcaster.java:1244] Broadcast Interrupted 12345678910
+16:22:35.840 DEBUG [1087605110@qtp-317263395-2] o.a.c.DefaultBroadcaster [DefaultBroadcaster.java:1244] Broadcast Interrupted 12345678910
+16:22:35.850 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:22:35.953 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:35.955 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:35.955 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:35.998 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:35.999 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:35.999 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:35.999 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:36.000 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:36.000 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:36.000 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:36.001 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:36.001 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:36.001 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:36.002 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:36.002 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:36.002 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:36.002 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:36.003 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:36.003 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:36.003 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:36.003 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:36.004 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:36.004 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:36.004 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:36.004 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53716
+16:22:36.005 INFO [TestNGInvoker-testResumeOnBroadcast()] o.a.t.h.BaseTest [BaseTest.java:410] BlockingIOCometSupportTest: running test: testResumeOnBroadcast
+16:22:36.006 INFO [TestNGInvoker-testResumeOnBroadcast()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$7 mapped to context-path: /*
+16:22:36.020 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:22:36.022 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:36.024 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:36.024 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:36.057 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:36.058 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:36.058 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:36.058 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:36.059 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:36.059 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:36.059 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:36.059 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:36.060 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:36.060 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:36.060 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:36.060 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:36.060 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:36.061 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:36.061 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:36.061 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:36.061 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:36.062 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:36.062 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:36.062 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:36.062 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:36.063 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53719
+16:22:36.063 INFO [TestNGInvoker-testDelayScheduleBroadcast()] o.a.t.h.BaseTest [BaseTest.java:702] BlockingIOCometSupportTest: running test: testDelayScheduleBroadcast
+16:22:36.064 INFO [TestNGInvoker-testDelayScheduleBroadcast()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$14 mapped to context-path: /*
+16:22:46.080 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:22:46.182 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:22:46.185 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:22:46.185 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:22:46.228 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:22:46.229 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:22:46.229 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:22:46.229 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:22:46.229 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:22:46.229 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:22:46.230 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:22:46.230 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:22:46.230 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:22:46.230 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:22:46.231 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:22:46.231 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:22:46.231 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:22:46.231 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:22:46.232 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:22:46.232 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:22:46.232 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:22:46.232 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:22:46.232 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:22:46.233 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:22:46.233 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:22:46.233 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53732
+16:22:46.234 INFO [TestNGInvoker-testBroadcastOnResumeMsg()] o.a.t.h.BaseTest [BaseTest.java:1126] BlockingIOCometSupportTest: running test: testBroadcastOnResumeMsg
+16:22:46.235 INFO [TestNGInvoker-testBroadcastOnResumeMsg()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$25 mapped to context-path: /*
+16:22:46.244 WARN [1265227613@qtp-1108936415-2] o.a.c.AtmosphereResourceImpl [AtmosphereResourceImpl.java:273] AtmosphereResource 7822acc9-aa7c-4af8-b15f-3c73467d305f not suspend, cannot resume it.
+16:23:06.248 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:23:06.350 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:23:06.352 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:23:06.352 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:23:06.384 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:23:06.385 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:23:06.385 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:23:06.385 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:23:06.385 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:23:06.386 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:23:06.386 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:23:06.386 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:23:06.386 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:23:06.386 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:23:06.387 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:23:06.387 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:23:06.387 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:23:06.387 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:23:06.388 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:23:06.388 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:23:06.388 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:23:06.388 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:23:06.388 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:23:06.389 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:23:06.389 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:23:06.389 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53752
+16:23:06.390 INFO [TestNGInvoker-testSuspendTimeout()] o.a.t.h.BaseTest [BaseTest.java:142] BlockingIOCometSupportTest: running test: testSuspendTimeout
+16:23:06.391 INFO [TestNGInvoker-testSuspendTimeout()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$1 mapped to context-path: /*
+16:23:11.401 DEBUG [main] o.a.c.DefaultBroadcasterFactory [DefaultBroadcasterFactory.java:208] Removing Broadcaster suspend factory size now 0 
+16:23:11.505 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
+16:23:11.507 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:2112] Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+16:23:11.507 INFO [main] o.a.c.DefaultAnnotationProcessor [DefaultAnnotationProcessor.java:89] AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+16:23:11.538 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1456] Auto detecting atmosphere handlers /WEB-INF/classes/
+16:23:11.539 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1511] Auto detecting WebSocketHandler in /WEB-INF/classes/
+16:23:11.539 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1209] Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+16:23:11.540 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:1437] Atmosphere is using async support: org.atmosphere.container.BlockingIOCometSupport running under container: jetty/6.1.22
+16:23:11.540 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:786] Installing Default AtmosphereInterceptor
+16:23:11.540 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.DefaultHeadersInterceptor : Default Response's Headers Interceptor
+16:23:11.540 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+16:23:11.540 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+16:23:11.541 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+16:23:11.541 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+16:23:11.541 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+16:23:11.541 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:801] 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+16:23:11.542 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:792] Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+16:23:11.542 WARN [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:653] No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+16:23:11.542 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:673] Shared ExecutorService supported: true
+16:23:11.542 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:674] HttpSession supported: false
+16:23:11.542 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:675] Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+16:23:11.543 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:676] Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+16:23:11.543 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:677] Using Broadcaster: org.atmosphere.cpr.DefaultBroadcaster
+16:23:11.543 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:678] Atmosphere Framework 2.0.0-SNAPSHOT started.
+16:23:11.543 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:680] 
+
+	For Atmosphere Framework Commercial Support, visit 
+	http://www.async-io.org/ or send an email to support@async-io.org
+
+16:23:11.544 INFO [main] o.m.log [Slf4jLog.java:67] Started SocketConnector@127.0.0.1:53761
+16:23:11.545 INFO [TestNGInvoker-testProgrammaticResume()] o.a.t.h.BaseTest [BaseTest.java:344] BlockingIOCometSupportTest: running test: testProgrammaticResume
+16:23:11.546 INFO [TestNGInvoker-testProgrammaticResume()] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.BaseTest$5 mapped to context-path: /*
