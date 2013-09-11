@@ -1,4 +1,0 @@
-13:16:17.334 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.AtmosphereServletTest$Handler mapped to context-path: /test
-13:16:17.337 INFO [main] o.a.c.AtmosphereFramework [AtmosphereFramework.java:417] Installed AtmosphereHandler org.atmosphere.tests.http.AtmosphereServletTest$Handler mapped to context-path: /test2
-13:16:17.393 INFO [main] o.m.log [Slf4jLog.java:67] Logging to Logger[org.mortbay.log] via org.mortbay.log.Slf4jLog
-13:16:17.411 INFO [main] o.m.log [Slf4jLog.java:67] jetty-6.1.22
