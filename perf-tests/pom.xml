@@ -72,5 +72,8 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <properties>
+        <ahc.version>1.7.20</ahc.version>
+    </properties>
 
 </project>
