@@ -61,7 +61,7 @@ public class PerfTest {
 
     @BeforeMethod
     public void start() throws IOException {
-        port = 8080;
+        port = findFreePort();
         Config.Builder b = new Config.Builder();
         b.resource(Echo.class)
                 .port(port)
