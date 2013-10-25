@@ -92,6 +92,7 @@ public abstract class BaseTest {
                 event.getResource().getResponse().getOutputStream().write("resume".getBytes());
             }
         }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        atmoServlet.framework().getAtmosphereConfig().setSupportSession(true);
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -171,6 +172,7 @@ public abstract class BaseTest {
                 }
             }
         }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        atmoServlet.framework().getAtmosphereConfig().setSupportSession(true);
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
