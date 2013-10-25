@@ -15,18 +15,12 @@
  */
 package org.atmosphere.jersey.tests;
 
-import org.atmosphere.cpr.AtmosphereConfig;
-import org.atmosphere.cpr.BroadcasterConfig;
 import org.atmosphere.jersey.JerseyBroadcaster;
 
 /**
  * Simple {@link org.atmosphere.cpr.BroadcasterConfig}
  */
 public class RecyclableBroadcaster extends JerseyBroadcaster {
-
-    public RecyclableBroadcaster(String name, AtmosphereConfig config) {
-        super(name, config);
-    }
 
     /**
      * {@inheritDoc}
