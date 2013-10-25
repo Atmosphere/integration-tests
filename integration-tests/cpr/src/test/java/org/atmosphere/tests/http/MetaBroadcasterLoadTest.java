@@ -50,10 +50,6 @@ public class MetaBroadcasterLoadTest {
 
     public static final class TestBroadcaster extends DefaultBroadcaster {
 
-        public TestBroadcaster(String name, AtmosphereConfig config) {
-            super(name, config);
-        }
-
         public BlockingQueue<Entry> messages() {
             return messages;
         }
