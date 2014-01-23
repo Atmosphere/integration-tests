@@ -110,7 +110,6 @@ public abstract class BaseTest {
 
                 @Override
                 public void onFragment(String fragment, boolean last) {
-                    fail();
                 }
 
                 @Override
@@ -189,7 +188,6 @@ public abstract class BaseTest {
 
                 @Override
                 public void onFragment(String fragment, boolean last) {
-                    fail();
                 }
 
                 @Override
@@ -266,7 +264,6 @@ public abstract class BaseTest {
 
                 @Override
                 public void onFragment(String fragment, boolean last) {
-                    fail();
                 }
 
                 @Override
@@ -374,7 +371,6 @@ public abstract class BaseTest {
 
                 @Override
                 public void onFragment(String fragment, boolean last) {
-                    fail();
                 }
 
                 @Override
@@ -481,7 +477,6 @@ public abstract class BaseTest {
 
                 @Override
                 public void onFragment(String fragment, boolean last) {
-                    fail();
                 }
 
                 @Override
