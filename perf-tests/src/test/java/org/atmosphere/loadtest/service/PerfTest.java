@@ -94,7 +94,7 @@ public class PerfTest {
     private boolean load(String url, final int clientNum, final int messageNum) throws IOException, InterruptedException {
         AsyncHttpClientConfig.Builder b = new AsyncHttpClientConfig.Builder();
         b.setFollowRedirects(true).setIdleConnectionTimeoutInMs(-1).setRequestTimeoutInMs(-1);
-        final AsyncHttpClient c = new AsyncHttpClient(b.build());
+        final AsyncHttpClient ahc = new AsyncHttpClient(b.build());
 
         final CountDownLatch l = new CountDownLatch(clientNum);
 
@@ -111,7 +111,7 @@ public class PerfTest {
         Socket[] sockets = new Socket[clientNum];
         for (int i = 0; i < clientCount; i++) {
             final AtomicLong start = new AtomicLong(0);
-            sockets[i] = client.create(client.newOptionsBuilder().runtime(c).reconnect(false).build())
+            sockets[i] = client.create(client.newOptionsBuilder().runtimeShared(true).runtime(ahc).reconnect(false).build())
                     .on(new Function<Integer>() {
                         @Override
                         public void on(Integer statusCode) {
@@ -147,25 +147,28 @@ public class PerfTest {
         for (int i = 0; i < clientCount; i++) {
             sockets[i].open(request.build());
         }
-        l.await(60, TimeUnit.SECONDS);
+        l.await(30, TimeUnit.SECONDS);
         System.out.println("OK, all Connected: " + clientNum);
 
-        Socket socket = client.create(client.newOptionsBuilder().runtime(c).build());
-        socket.open(request.build());
-
-        for (int i = 0; i < 10; i++ ) {
-            socket.fire("ramup" + i);
+        // Let NettoSphere complete the handshake process
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+
+        Socket loader = client.create(client.newOptionsBuilder().runtime(ahc).build());
+        loader.open(request.build());
 
         for (int i = 0; i < messageNum; i++ ) {
-            socket.fire("message" + i);
+            loader.fire("message" + i);
         }
         boolean completed = messages.await(5, TimeUnit.MINUTES);
-        socket.close();
+        loader.close();
         for (int i = 0; i < clientCount; i++) {
             sockets[i].close();
         }
-        c.close();
+        ahc.close();
         return completed;
     }
 
