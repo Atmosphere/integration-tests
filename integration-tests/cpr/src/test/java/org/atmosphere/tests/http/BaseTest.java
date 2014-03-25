@@ -1360,7 +1360,7 @@ public abstract class BaseTest {
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
-            c.prepareGet(urlTarget).addCookie(new com.ning.http.client.cookie.Cookie("", "yo", "man", "", "", -1, -1, false, false)).execute(new AsyncCompletionHandler<String>() {
+            c.prepareGet(urlTarget).addCookie(new com.ning.http.client.cookie.Cookie("yo", "", "man", "", "", -1, -1, false, false)).execute(new AsyncCompletionHandler<String>() {
 
                 @Override
                 public String onCompleted(Response response) throws Exception {
