@@ -795,7 +795,7 @@ public abstract class BaseTest {
                 } else {
                     event.getBroadcaster().getBroadcasterConfig().addFilter(new BroadcastFilter() {
 
-                        public BroadcastAction filter(Object o, Object message) {
+                        public BroadcastAction filter(String id, Object o, Object message) {
                             return new BroadcastAction(BroadcastAction.ACTION.CONTINUE, "boo" + message);
                         }
                     });
