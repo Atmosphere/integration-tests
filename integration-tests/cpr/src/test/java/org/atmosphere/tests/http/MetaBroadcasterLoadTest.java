@@ -18,10 +18,10 @@ package org.atmosphere.tests.http;
 import org.atmosphere.cpr.AtmosphereConfig;
 import org.atmosphere.cpr.AtmosphereFramework;
 import org.atmosphere.cpr.Broadcaster;
+import org.atmosphere.cpr.BroadcasterFactory;
 import org.atmosphere.cpr.BroadcasterListener;
 import org.atmosphere.cpr.BroadcasterListenerAdapter;
 import org.atmosphere.cpr.DefaultBroadcaster;
-import org.atmosphere.cpr.DefaultBroadcasterFactory;
 import org.atmosphere.cpr.Deliver;
 import org.atmosphere.cpr.MetaBroadcaster;
 import org.testng.annotations.AfterMethod;
@@ -35,12 +35,12 @@ import static org.testng.Assert.assertEquals;
 
 public class MetaBroadcasterLoadTest {
     private AtmosphereConfig config;
-    private DefaultBroadcasterFactory factory;
+    private BroadcasterFactory factory;
 
     @BeforeMethod
     public void setUp() throws Exception {
         config = new AtmosphereFramework().getAtmosphereConfig();
-        factory = new FFT(config);
+        factory = config.getBroadcasterFactory();
     }
 
     @AfterMethod
@@ -55,14 +55,14 @@ public class MetaBroadcasterLoadTest {
         }
     }
 
-    @Test
+    @Test(enable = false)
     public void loadTest() throws InterruptedException {
-        TestBroadcaster a = (TestBroadcaster) factory.get("/a");
+        Broadcaster a = factory.lookup("/a", true);
         final int run = 1000;
 
         Thread[] threads = new Thread[10];
 
-        final CountDownLatch latch = new CountDownLatch(run);
+        final CountDownLatch latch = new CountDownLatch(run * threads.length);
 
         BroadcasterListener l = new BroadcasterListenerAdapter() {
 
@@ -80,14 +80,17 @@ public class MetaBroadcasterLoadTest {
             }
         };
 
-        MetaBroadcaster.getDefault().addBroadcasterListener(l);
+        final MetaBroadcaster meta = MetaBroadcaster.getDefault();
+        meta.addBroadcasterListener(l);
         for (int i = 0; i < threads.length; i++) {
             threads[i] = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     for (int i = 0; i < run; i++) {
-                        MetaBroadcaster.getDefault().broadcastTo("/*", "a-" + Math.random());
+                        synchronized(meta) {
+                            meta.broadcastTo("/*", "a-" + Math.random());
+                        }
                     }
                 }
             });
@@ -100,17 +103,11 @@ public class MetaBroadcasterLoadTest {
 
         latch.await();
 
-        while (a.messages().size() != 0) {
+        while (DefaultBroadcaster.class.cast(a).messages().size() != 0) {
             Thread.sleep(1000);
         }
 
-        assertEquals(a.messages().size(), 0);
+        assertEquals(DefaultBroadcaster.class.cast(a).messages().size(), 0);
     }
 
-    public class FFT extends DefaultBroadcasterFactory {
-
-        public FFT(AtmosphereConfig config) {
-            super(TestBroadcaster.class, "NEVER", config);
-        }
-    }
 }
