@@ -55,7 +55,7 @@ public class MetaBroadcasterLoadTest {
         }
     }
 
-    @Test(enable = false)
+    @Test(enabled = false)
     public void loadTest() throws InterruptedException {
         Broadcaster a = factory.lookup("/a", true);
         final int run = 1000;
