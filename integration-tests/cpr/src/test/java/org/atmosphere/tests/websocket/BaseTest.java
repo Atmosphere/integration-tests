@@ -315,8 +315,7 @@ public abstract class BaseTest {
         logger.info("{}: running test: onDisconnectTest", getClass().getSimpleName());
 
         final AtomicBoolean onDisconnect = new AtomicBoolean();
-        final AtomicBoolean onClose = new AtomicBoolean();
-        final CountDownLatch eventReceived = new CountDownLatch(2);
+        final CountDownLatch eventReceived = new CountDownLatch(1);
 
         final CountDownLatch latch = new CountDownLatch(1);
         atmoServlet.framework().addAtmosphereHandler(ROOT, new AbstractHttpAtmosphereHandler() {
@@ -327,15 +326,8 @@ public abstract class BaseTest {
                 r.addEventListener(new WebSocketEventListenerAdapter() {
 
                     @Override
-                    public void onDisconnect(WebSocketEvent event) {
+                    public void onDisconnect(AtmosphereResourceEvent event) {
                         onDisconnect.set(true);
-                        eventReceived.countDown();
-                    }
-
-
-                    @Override
-                    public void onClose(WebSocketEvent event) {
-                        onClose.set(true);
                         eventReceived.countDown();
                     }
                 });
@@ -350,7 +342,7 @@ public abstract class BaseTest {
             }
 
             public void onStateChange(AtmosphereResourceEvent event) throws IOException {
-                if (event.isSuspended()) {
+                if (!event.isCancelled()) {
                     event.getResource().write(event.getMessage().toString().getBytes());
                 }
             }
@@ -399,7 +391,6 @@ public abstract class BaseTest {
             eventReceived.await(10, TimeUnit.SECONDS);
             assertNotNull(response.get());
             assertEquals(response.get(), "echo");
-            assertTrue(onClose.get());
             assertTrue(onDisconnect.get());
 
         } catch (Exception e) {
