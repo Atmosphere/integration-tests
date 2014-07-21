@@ -496,8 +496,8 @@
         <compat-version>2.0.0</compat-version>
         <shiro-version>1.2.2</shiro-version>
 
-        <atmosphere-version>[2.2.0-SNAPSHOT, )</atmosphere-version>
-        <nettosphere-version>[2.2.0-SNAPSHOT, )</nettosphere-version>
-        <wasync-version>[1.3.2-SNAPSHOT, )</wasync-version>
+        <atmosphere-version>2.2.0-SNAPSHOT</atmosphere-version>
+        <nettosphere-version>2.2.0-SNAPSHOT</nettosphere-version>
+        <wasync-version>1.4.0-SNAPSHOT</wasync-version>
     </properties>
 </project>

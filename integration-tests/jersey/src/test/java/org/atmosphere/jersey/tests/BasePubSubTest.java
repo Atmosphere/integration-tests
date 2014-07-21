@@ -22,9 +22,6 @@ import com.ning.http.client.HttpResponseBodyPart;
 import com.ning.http.client.HttpResponseHeaders;
 import com.ning.http.client.HttpResponseStatus;
 import com.ning.http.client.Response;
-import org.atmosphere.cache.HeaderBroadcasterCache;
-import org.atmosphere.cpr.AtmosphereResourceImpl;
-import org.atmosphere.cpr.HeaderConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -411,51 +408,6 @@ public abstract class BasePubSubTest extends BaseTest {
                     "==================================================\n" +
                     "==================================================\n" +
                     "==================================================\n");
-        } catch (Exception e) {
-            logger.error("test failed", e);
-            fail(e.getMessage());
-        }
-
-        c.close();
-    }
-
-    @Test(timeOut = 20000, enabled = false)
-    public void testHeaderBroadcasterCache() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
-        logger.info("{}: running test: testHeaderBroadcasterCache", getClass().getSimpleName());
-
-        atmoServlet.framework().setBroadcasterCacheClassName(HeaderBroadcasterCache.class.getName());
-        final CountDownLatch latch = new CountDownLatch(1);
-        long t1 = System.currentTimeMillis();
-        AsyncHttpClient c = new AsyncHttpClient();
-        try {
-            // Suspend
-            c.preparePost(urlTarget).addParameter("message", "cacheme").execute().get();
-
-            // Broadcast
-            c.preparePost(urlTarget).addParameter("message", "cachememe").execute().get();
-
-            //Suspend
-            Response r = c.prepareGet(urlTarget + "/subscribeAndResume").addHeader(HeaderConfig.X_CACHE_DATE, String.valueOf(t1)).execute(new AsyncCompletionHandler<Response>() {
-
-                @Override
-                public Response onCompleted(Response r) throws Exception {
-                    try {
-                        return r;
-                    } finally {
-                        latch.countDown();
-                    }
-                }
-            }).get();
-
-            try {
-                latch.await(20, TimeUnit.SECONDS);
-            } catch (InterruptedException e) {
-                fail(e.getMessage());
-            }
-
-            assertNotNull(r);
-            assertEquals(r.getStatusCode(), 200);
-            assertEquals(r.getResponseBody(), "cacheme\ncachememe\n");
         } catch (Exception e) {
             logger.error("test failed", e);
             fail(e.getMessage());

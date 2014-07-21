@@ -54,7 +54,6 @@ package org.atmosphere.tests.http;
 import com.ning.http.client.AsyncCompletionHandler;
 import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.Response;
-import org.atmosphere.cache.HeaderBroadcasterCache;
 import org.atmosphere.cpr.AtmosphereResource;
 import org.atmosphere.cpr.AtmosphereResourceEvent;
 import org.atmosphere.cpr.AtmosphereServlet;
@@ -918,86 +917,6 @@ public abstract class BaseTest {
             logger.error("test failed", e);
             fail(e.getMessage());
         }
-        c.close();
-    }
-
-    @Test(timeOut = 60000, enabled = false)
-    public void testHeaderBroadcasterCache() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
-        logger.info("{}: running test: testHeaderBroadcasterCache", getClass().getSimpleName());
-
-        atmoServlet.framework().setBroadcasterCacheClassName(HeaderBroadcasterCache.class.getName());
-        final CountDownLatch latch = new CountDownLatch(1);
-
-        long t1 = System.currentTimeMillis();
-        atmoServlet.framework().addAtmosphereHandler(ROOT, new AbstractHttpAtmosphereHandler() {
-
-            public void onRequest(AtmosphereResource event) throws IOException {
-                try {
-                    if (event.getRequest().getHeader(HeaderConfig.X_CACHE_DATE) != null) {
-                        event.suspend(-1);
-                        return;
-                    }
-                    event.getBroadcaster().broadcast("12345678910").get();
-                } catch (InterruptedException e) {
-                    logger.error("", e);
-                } catch (ExecutionException e) {
-                    logger.error("", e);
-                }
-                event.getResponse().flushBuffer();
-            }
-
-            public void onStateChange(AtmosphereResourceEvent event) throws IOException {
-                if (event.isResuming()) {
-                    return;
-                }
-                try {
-                    assertFalse(event.isCancelled());
-                    assertNotNull(event.getMessage());
-                    if (List.class.isAssignableFrom(event.getMessage().getClass())) {
-                        for (String m : (List<String>) event.getMessage()) {
-                            event.getResource().getResponse().getOutputStream().write(m.getBytes());
-                        }
-                    }
-                    event.getResource().getResponse().flushBuffer();
-                    event.getResource().resume();
-                } finally {
-                    latch.countDown();
-                }
-            }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
-
-        AsyncHttpClient c = new AsyncHttpClient();
-        try {
-            c.prepareGet(urlTarget).execute().get();
-            c.prepareGet(urlTarget).execute().get();
-
-            //Suspend
-            Response r = c.prepareGet(urlTarget).addHeader(HeaderConfig.X_CACHE_DATE, String.valueOf(t1)).execute(new AsyncCompletionHandler<Response>() {
-
-                @Override
-                public Response onCompleted(Response r) throws Exception {
-                    try {
-                        return r;
-                    } finally {
-                        latch.countDown();
-                    }
-                }
-            }).get();
-
-            try {
-                latch.await(20, TimeUnit.SECONDS);
-            } catch (InterruptedException e) {
-                fail(e.getMessage());
-            }
-
-            assertNotNull(r);
-            assertEquals(r.getStatusCode(), 200);
-            assertEquals(r.getResponseBody(), "1234567891012345678910");
-        } catch (Exception e) {
-            logger.error("test failed", e);
-            fail(e.getMessage());
-        }
-
         c.close();
     }
 
