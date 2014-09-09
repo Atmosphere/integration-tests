@@ -486,7 +486,6 @@
         <guice-version>2.0</guice-version>
         <spring-version>3.0.6.RELEASE</spring-version>
         <wicket.version>1.4.12</wicket.version>
-        <ahc.version>1.8.9</ahc.version>
         <jedis.version>2.0.0</jedis.version>
         <slf4j-impl-version>1.6.1</slf4j-impl-version>
         <slf4j-version>1.6.1</slf4j-version>
@@ -498,6 +497,7 @@
 
         <atmosphere-version>2.3.0-SNAPSHOT</atmosphere-version>
         <nettosphere-version>2.2.1-SNAPSHOT</nettosphere-version>
-        <wasync-version>1.4.1-SNAPSHOT</wasync-version>
+        <wasync-version>2.0.0-SNAPSHOT</wasync-version>
+        <ahc.version>1.9.0-SNAPSHOT</ahc.version>
     </properties>
 </project>

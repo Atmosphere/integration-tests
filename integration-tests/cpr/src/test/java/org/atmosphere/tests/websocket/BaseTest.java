@@ -109,10 +109,6 @@ public abstract class BaseTest {
                 }
 
                 @Override
-                public void onFragment(String fragment, boolean last) {
-                }
-
-                @Override
                 public void onOpen(WebSocket websocket) {
                 }
 
@@ -187,10 +183,6 @@ public abstract class BaseTest {
                 }
 
                 @Override
-                public void onFragment(String fragment, boolean last) {
-                }
-
-                @Override
                 public void onOpen(WebSocket websocket) {
                 }
 
@@ -204,7 +196,7 @@ public abstract class BaseTest {
                     t.printStackTrace();
                     fail(t.getMessage());
                 }
-            }).sendTextMessage("echo");
+            }).sendMessage("echo");
 
             try {
                 latch.await(20, TimeUnit.SECONDS);
@@ -263,10 +255,6 @@ public abstract class BaseTest {
                 }
 
                 @Override
-                public void onFragment(String fragment, boolean last) {
-                }
-
-                @Override
                 public void onOpen(WebSocket websocket) {
                 }
 
@@ -280,7 +268,7 @@ public abstract class BaseTest {
                     t.printStackTrace();
                     fail(t.getMessage());
                 }
-            }).sendTextMessage("echo");
+            }).sendMessage("echo");
 
             try {
                 latch.await(20, TimeUnit.SECONDS);
@@ -362,10 +350,6 @@ public abstract class BaseTest {
                 }
 
                 @Override
-                public void onFragment(String fragment, boolean last) {
-                }
-
-                @Override
                 public void onOpen(WebSocket websocket) {
                 }
 
@@ -379,7 +363,7 @@ public abstract class BaseTest {
                     t.printStackTrace();
                     fail(t.getMessage());
                 }
-            }).sendTextMessage("echo");
+            }).sendMessage("echo");
 
             try {
                 latch.await(20, TimeUnit.SECONDS);
@@ -467,10 +451,6 @@ public abstract class BaseTest {
                 }
 
                 @Override
-                public void onFragment(String fragment, boolean last) {
-                }
-
-                @Override
                 public void onOpen(WebSocket websocket) {
                 }
 
@@ -484,7 +464,7 @@ public abstract class BaseTest {
                     t.printStackTrace();
                     fail(t.getMessage());
                 }
-            }).sendTextMessage("echo");
+            }).sendMessage("echo");
 
             try {
                 latch.await(20, TimeUnit.SECONDS);
