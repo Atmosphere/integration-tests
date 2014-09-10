@@ -115,24 +115,34 @@ public class UUIDBroadcasterCacheTest {
 
             public AtomicInteger count = new AtomicInteger(0);
 
-            public void onRequest(AtmosphereResource event) throws IOException {
-                try {
-                    if (event.getRequest().getHeader(HeaderConfig.X_ATMOSPHERE_TRACKING_ID) != null) {
-                        event.addEventListener(new AtmosphereResourceEventListenerAdapter() {
-                            @Override
-                            public void onSuspend(AtmosphereResourceEvent event) {
-                                suspendLatch.countDown();
+            public void onRequest(final AtmosphereResource resource) throws IOException {
+                if (resource.getRequest().getHeader(HeaderConfig.X_ATMOSPHERE_TRACKING_ID) != null) {
+                    resource.addEventListener(new AtmosphereResourceEventListenerAdapter() {
+                        @Override
+                        public void onSuspend(AtmosphereResourceEvent event) {
+                            try {
+                                resource.getBroadcaster().broadcast("message-" + count.getAndIncrement()).get();
+                                resource.getResponse().flushBuffer();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            } catch (ExecutionException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
                             }
-                        }).suspend();
-                        return;
+                            suspendLatch.countDown();
+                        }
+                    }).suspend();
+                } else {
+                    try {
+                        resource.getBroadcaster().broadcast("message-" + count.getAndIncrement()).get();
+                        resource.getResponse().flushBuffer();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
                     }
-                    event.getBroadcaster().broadcast("message-" + count.getAndIncrement()).get();
-                } catch (InterruptedException e) {
-                    logger.error("", e);
-                } catch (ExecutionException e) {
-                    logger.error("", e);
                 }
-                event.getResponse().flushBuffer();
             }
 
             public void onStateChange(AtmosphereResourceEvent event) throws IOException {
@@ -199,7 +209,7 @@ public class UUIDBroadcasterCacheTest {
 
             assertNotNull(response.get());
             assertEquals(response.get().getStatusCode(), 200);
-            assertEquals(response.get().getResponseBody().trim(), "message-1message-2");
+            assertEquals(response.get().getResponseBody().trim(), "message-1message-2message-3");
         } catch (Exception e) {
             logger.error("test failed", e);
             fail(e.getMessage());
