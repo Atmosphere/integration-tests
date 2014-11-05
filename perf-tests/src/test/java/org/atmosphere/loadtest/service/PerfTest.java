@@ -93,7 +93,7 @@ public class PerfTest {
 
     private boolean load(String url, final int clientNum, final int messageNum) throws IOException, InterruptedException {
         AsyncHttpClientConfig.Builder b = new AsyncHttpClientConfig.Builder();
-        b.setFollowRedirect(true).setConnectionTimeout(-1).setReadTimeout(-1);
+        b.setFollowRedirect(true).setConnectTimeout(-1).setReadTimeout(-1);
         final AsyncHttpClient ahc = new AsyncHttpClient(b.build());
 
         final CountDownLatch l = new CountDownLatch(clientNum);
