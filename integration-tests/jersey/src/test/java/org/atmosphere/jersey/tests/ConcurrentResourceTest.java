@@ -20,7 +20,6 @@ import com.ning.http.client.AsyncCompletionHandler;
 import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.Response;
 import org.atmosphere.cpr.Broadcaster;
-import org.atmosphere.cpr.BroadcasterFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -75,8 +74,8 @@ public class ConcurrentResourceTest extends BaseJettyTest {
 
             assertEquals(r.get().toString(), b2.toString());
             // Scope == REQUEST
-            assertEquals(1, BroadcasterFactory.getDefault().lookupAll().size());
-            Iterator<Broadcaster> i = BroadcasterFactory.getDefault().lookupAll().iterator();
+            assertEquals(1, factory().lookupAll().size());
+            Iterator<Broadcaster> i = factory().lookupAll().iterator();
             // Since the policy is EMPTY_DESTROY, only one broadcaster (the default one) will be there..
             assertEquals("/*", i.next().getID());
 
@@ -123,8 +122,8 @@ public class ConcurrentResourceTest extends BaseJettyTest {
 
             assertEquals(r.get().toString(), b2.toString());
             // Scope == REQUEST
-            assertEquals(BroadcasterFactory.getDefault().lookupAll().size(), 1);
-            Iterator<Broadcaster> i = BroadcasterFactory.getDefault().lookupAll().iterator();
+            assertEquals(factory().lookupAll().size(), 1);
+            Iterator<Broadcaster> i = factory().lookupAll().iterator();
             // Since the policy is IDLE_DESTROY, only one broadcaster (the default one) will be there..
             assertEquals("/*", i.next().getID());
 
@@ -171,8 +170,8 @@ public class ConcurrentResourceTest extends BaseJettyTest {
 
             assertEquals(r.get().toString(), b2.toString());
             // Scope == REQUEST
-            assertEquals(BroadcasterFactory.getDefault().lookupAll().size(), 1);
-            Iterator<Broadcaster> i = BroadcasterFactory.getDefault().lookupAll().iterator();
+            assertEquals(factory().lookupAll().size(), 1);
+            Iterator<Broadcaster> i = factory().lookupAll().iterator();
             // Since the policy is IDLE_DESTROY, only one broadcaster (the default one) will be there..
             assertEquals("/*", i.next().getID());
 
@@ -184,5 +183,6 @@ public class ConcurrentResourceTest extends BaseJettyTest {
         }
         c.close();
     }
+
 
 }

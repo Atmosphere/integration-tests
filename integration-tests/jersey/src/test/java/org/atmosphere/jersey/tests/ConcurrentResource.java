@@ -43,10 +43,12 @@ import static org.atmosphere.cpr.BroadcasterLifeCyclePolicy.ATMOSPHERE_RESOURCE_
 @Produces("text/plain;charset=ISO-8859-1")
 public class ConcurrentResource {
 
+    @Context BroadcasterFactory factory;
+
     @GET
     @Suspend(resumeOnBroadcast = true, listeners = {SuspendListener.class}, scope = Suspend.SCOPE.REQUEST)
     public Broadcastable subscribe() {
-        return new Broadcastable(BroadcasterFactory.getDefault().get(UUID.randomUUID().toString()));
+        return new Broadcastable(factory.get(UUID.randomUUID().toString()));
     }
 
     public final static class SuspendListener extends AtmosphereResourceEventListenerAdapter {

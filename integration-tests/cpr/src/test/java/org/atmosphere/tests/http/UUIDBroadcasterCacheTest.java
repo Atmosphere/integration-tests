@@ -147,7 +147,7 @@ public class UUIDBroadcasterCacheTest {
                 }
                 event.getResource().resume();
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "cache"));
+        }, factory().get(DefaultBroadcaster.class, "cache"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -257,7 +257,7 @@ public class UUIDBroadcasterCacheTest {
                 }
                 event.getResource().resume();
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "cache").addBroadcasterListener(new BroadcasterListenerAdapter() {
+        }, factory().get(DefaultBroadcaster.class, "cache").addBroadcasterListener(new BroadcasterListenerAdapter() {
             @Override
             public void onPostCreate(Broadcaster b) {
             }
@@ -355,4 +355,7 @@ public class UUIDBroadcasterCacheTest {
         c.close();
     }
 
+    BroadcasterFactory factory(){
+        return atmoServlet.framework().getBroadcasterFactory();
+    }
 }

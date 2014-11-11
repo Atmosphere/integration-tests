@@ -172,7 +172,7 @@ public class BroadcasterScopeTest {
 
             String id = broadcasterId.get();
 
-            b = BroadcasterFactory.getDefault().lookup(DefaultBroadcaster.class, id);
+            b = factory().lookup(DefaultBroadcaster.class, id);
             assertNotNull(b);
             b.broadcast("resume").get();
 
@@ -221,4 +221,7 @@ public class BroadcasterScopeTest {
         c.close();
     }
 
+    BroadcasterFactory factory(){
+        return atmoServlet.framework().getBroadcasterFactory();
+    }
 }

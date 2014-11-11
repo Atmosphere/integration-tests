@@ -142,7 +142,7 @@ public class ConcurrentBroadcastTest {
 
             broadcasterReady.await(10, TimeUnit.SECONDS);
 
-            BroadcasterFactory.getDefault().lookup(DefaultBroadcaster.class, "/suspend").broadcast("foo").get();
+            factory().lookup(DefaultBroadcaster.class, "/suspend").broadcast("foo").get();
 
             suspended.await(60, TimeUnit.SECONDS);
 
@@ -191,4 +191,7 @@ public class ConcurrentBroadcastTest {
         }
     }
 
+    BroadcasterFactory factory(){
+        return atmoServlet.framework().getBroadcasterFactory();
+    }
 }

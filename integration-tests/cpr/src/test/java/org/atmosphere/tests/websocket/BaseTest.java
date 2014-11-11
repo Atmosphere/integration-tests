@@ -91,7 +91,7 @@ public abstract class BaseTest {
             public void onStateChange(AtmosphereResourceEvent event) throws IOException {
                 event.getResource().getResponse().getOutputStream().write("resume".getBytes());
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
         atmoServlet.framework().getAtmosphereConfig().setSupportSession(true);
 
         AsyncHttpClient c = new AsyncHttpClient();
@@ -166,7 +166,7 @@ public abstract class BaseTest {
                     event.getResource().write(event.getMessage().toString().getBytes());
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
         atmoServlet.framework().getAtmosphereConfig().setSupportSession(true);
 
         AsyncHttpClient c = new AsyncHttpClient();
@@ -239,7 +239,7 @@ public abstract class BaseTest {
                     event.getResource().write(event.getMessage().toString().getBytes());
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -334,7 +334,7 @@ public abstract class BaseTest {
                     event.getResource().write(event.getMessage().toString().getBytes());
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -435,7 +435,7 @@ public abstract class BaseTest {
                     event.getResource().write(event.getMessage().toString().getBytes());
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -482,5 +482,10 @@ public abstract class BaseTest {
             fail(e.getMessage());
         }
         c.close();
+    }
+
+
+    BroadcasterFactory factory(){
+        return atmoServlet.framework().getBroadcasterFactory();
     }
 }

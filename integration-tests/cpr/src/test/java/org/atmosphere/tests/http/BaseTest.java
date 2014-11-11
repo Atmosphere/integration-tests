@@ -61,7 +61,6 @@ import org.atmosphere.cpr.BroadcastFilter;
 import org.atmosphere.cpr.Broadcaster;
 import org.atmosphere.cpr.BroadcasterFactory;
 import org.atmosphere.cpr.DefaultBroadcaster;
-import org.atmosphere.cpr.HeaderConfig;
 import org.atmosphere.util.StringFilterAggregator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -73,7 +72,6 @@ import javax.servlet.http.Cookie;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -165,7 +163,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -216,7 +214,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -267,7 +265,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -319,7 +317,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -371,7 +369,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -440,7 +438,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -519,7 +517,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -592,7 +590,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -665,7 +663,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -741,7 +739,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -817,7 +815,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -887,7 +885,7 @@ public abstract class BaseTest {
                 event.getResource().resume();
                 latch.countDown();
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -950,7 +948,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -1009,7 +1007,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -1071,7 +1069,7 @@ public abstract class BaseTest {
                     assertEquals(event.getMessage(), "broadcastOnResume");
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -1115,7 +1113,7 @@ public abstract class BaseTest {
                 currentTime = System.currentTimeMillis();
                 event.suspend(5000);
                 try {
-                    Broadcaster b = BroadcasterFactory.getDefault().lookup(DefaultBroadcaster.class, "ExternalBroadcaster", true);
+                    Broadcaster b = factory().lookup(DefaultBroadcaster.class, "ExternalBroadcaster", true);
                     b.addAtmosphereResource(event);
                     b.broadcast("Outer broadcast").get();
 
@@ -1143,7 +1141,7 @@ public abstract class BaseTest {
                     }
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -1209,7 +1207,7 @@ public abstract class BaseTest {
                     }
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -1233,7 +1231,7 @@ public abstract class BaseTest {
             logger.error("test failed", e);
             fail(e.getMessage());
         } finally {
-            BroadcasterFactory.getDefault().lookup(DefaultBroadcaster.class, "suspend").destroy();
+            factory().lookup(DefaultBroadcaster.class, "suspend").destroy();
             c.close();
         }
     }
@@ -1275,7 +1273,7 @@ public abstract class BaseTest {
                     latch.countDown();
                 }
             }
-        }, BroadcasterFactory.getDefault().get(DefaultBroadcaster.class, "suspend"));
+        }, factory().get(DefaultBroadcaster.class, "suspend"));
 
         AsyncHttpClient c = new AsyncHttpClient();
         try {
@@ -1316,5 +1314,9 @@ public abstract class BaseTest {
     public static String createStreamingPadding(String padding) {
         StringBuilder s = new StringBuilder("");
         return s.toString();
+    }
+
+    BroadcasterFactory factory(){
+        return atmoServlet.framework().getBroadcasterFactory();
     }
 }

@@ -174,13 +174,13 @@ public class BroadcasterLifecycleTest {
         c.close();
     }
 
-    private static final class LifeCycleTestHandler implements AtmosphereHandler {
+    private final class LifeCycleTestHandler implements AtmosphereHandler {
 
         private Broadcaster broadcaster;
 
         @Override
         public void onRequest(AtmosphereResource r) throws IOException {
-            broadcaster = BroadcasterFactory.getDefault().get("Test-Destroy");
+            broadcaster = factory().get("Test-Destroy");
             r.setBroadcaster(broadcaster);
             ref.set(r);
             r.suspend(-1);
@@ -201,7 +201,7 @@ public class BroadcasterLifecycleTest {
         }
     }
 
-    private static final class Destroy implements AtmosphereHandler {
+    private final class Destroy implements AtmosphereHandler {
 
         @Override
         public void onRequest(AtmosphereResource r) throws IOException {
@@ -211,7 +211,7 @@ public class BroadcasterLifecycleTest {
                 throw new IOException(e);
             }
 
-            BroadcasterFactory.getDefault().lookup(DefaultBroadcaster.class, "Test-Destroy").destroy();
+            factory().lookup(DefaultBroadcaster.class, "Test-Destroy").destroy();
         }
 
         @Override
@@ -244,5 +244,9 @@ public class BroadcasterLifecycleTest {
         @Override
         public void destroy() {
         }
+    }
+
+    BroadcasterFactory factory(){
+        return atmoServlet.framework().getBroadcasterFactory();
     }
 }

@@ -209,7 +209,7 @@ public class MeteorTest {
 
             servletLatch.await();
 
-            Broadcaster b = BroadcasterFactory.getDefault().lookup(DefaultBroadcaster.class, "/*");
+            Broadcaster b = factory().lookup(DefaultBroadcaster.class, "/*");
             assertNotNull(b);
             b.broadcast("resume").get();
 
@@ -262,5 +262,9 @@ public class MeteorTest {
             fail(e.getMessage());
         }
         c.close();
+    }
+
+    BroadcasterFactory factory(){
+        return atmoServlet.framework().getBroadcasterFactory();
     }
 }

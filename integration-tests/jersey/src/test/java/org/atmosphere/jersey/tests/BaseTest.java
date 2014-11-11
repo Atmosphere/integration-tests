@@ -16,6 +16,7 @@
 package org.atmosphere.jersey.tests;
 
 import org.atmosphere.cpr.AtmosphereServlet;
+import org.atmosphere.cpr.BroadcasterFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterMethod;
@@ -99,5 +100,9 @@ public abstract class BaseTest {
     public static String createStreamingPadding(String padding) {
         StringBuilder s = new StringBuilder("");
         return s.toString();
+    }
+
+    public BroadcasterFactory factory(){
+        return atmoServlet.framework().getBroadcasterFactory();
     }
 }
