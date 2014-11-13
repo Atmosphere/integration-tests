@@ -20,18 +20,22 @@ import org.atmosphere.config.service.AtmosphereHandlerService;
 import org.atmosphere.cpr.AtmosphereResource;
 import org.atmosphere.cpr.AtmosphereResourceFactory;
 import org.atmosphere.handler.AtmosphereHandlerAdapter;
+import org.mockito.InjectMocks;
 
 import java.io.IOException;
 
 @AtmosphereHandlerService(path = "/echohttp/{id}", broadcasterCache = UUIDBroadcasterCache.class)
 public class HttpEcho extends AtmosphereHandlerAdapter{
 
+    @Inject
+    private AtmosphereResourceFactory factory;
+
     @Override
     public void onRequest(AtmosphereResource resource) throws IOException {
         if (resource.getRequest().getMethod().equalsIgnoreCase("GET")) {
             resource.suspend();
         } else {
-            AtmosphereResourceFactory.getDefault().find(resource.uuid()).write(resource.getRequest().getReader().readLine());
+            factory.find(resource.uuid()).write(resource.getRequest().getReader().readLine());
         }
     }
 }
