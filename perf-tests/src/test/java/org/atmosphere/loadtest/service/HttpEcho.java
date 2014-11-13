@@ -22,6 +22,7 @@ import org.atmosphere.cpr.AtmosphereResourceFactory;
 import org.atmosphere.handler.AtmosphereHandlerAdapter;
 import org.mockito.InjectMocks;
 
+import javax.inject.Inject;
 import java.io.IOException;
 
 @AtmosphereHandlerService(path = "/echohttp/{id}", broadcasterCache = UUIDBroadcasterCache.class)
