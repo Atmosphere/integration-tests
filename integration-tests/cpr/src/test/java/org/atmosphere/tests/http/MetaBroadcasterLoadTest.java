@@ -80,7 +80,7 @@ public class MetaBroadcasterLoadTest {
             }
         };
 
-        final MetaBroadcaster meta = MetaBroadcaster.getDefault();
+        final MetaBroadcaster meta = config.metaBroadcaster();
         meta.addBroadcasterListener(l);
         for (int i = 0; i < threads.length; i++) {
             threads[i] = new Thread(new Runnable() {
