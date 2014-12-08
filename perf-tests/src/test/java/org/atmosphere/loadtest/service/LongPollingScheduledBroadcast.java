@@ -4,7 +4,7 @@ import org.atmosphere.cache.UUIDBroadcasterCache;
 import org.atmosphere.client.TrackMessageSizeInterceptor;
 import org.atmosphere.config.service.AtmosphereHandlerService;
 import org.atmosphere.cpr.AtmosphereResource;
-import org.atmosphere.cpr.Universe;
+import org.atmosphere.cpr.MetaBroadcaster;
 import org.atmosphere.handler.AbstractReflectorAtmosphereHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,7 +44,7 @@ public class LongPollingScheduledBroadcast extends AbstractReflectorAtmosphereHa
                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                         }
                     }
-                    Universe.metaBroadcaster().broadcastTo("/longpolling/*", String.valueOf(message++));
+                    MetaBroadcaster.getDefault().broadcastTo("/longpolling/*", String.valueOf(message++));
                 }
             }
         }, 5, 100, TimeUnit.MILLISECONDS);
