@@ -125,7 +125,6 @@ public class PerfTest {
                         @Override
                         public void on(String s) {
                             System.out.println("Message left receive " + messages.getCount() + " message " + s);
-                            s = s.replace("|", "_").split("_")[1];
                             if (s.startsWith("message")) {
                                 String[] m = s.split("\n\r");
                                 mCount += m.length;
