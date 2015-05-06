@@ -497,7 +497,7 @@
 
         <atmosphere-version>2.2.7-SNAPSHOT</atmosphere-version>
         <nettosphere-version>2.2.2-SNAPSHOT</nettosphere-version>
-        <wasync-version>2.0.0-SNAPSHOT</wasync-version>
+        <wasync-version>2.1.1</wasync-version>
         <ahc.version>1.9.5</ahc.version>
     </properties>
 </project>
